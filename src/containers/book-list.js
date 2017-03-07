@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'; // glue react to reduxs
 
 class BookList extends Component {
 
@@ -10,8 +10,8 @@ class BookList extends Component {
          <li key={book.title} className="list-group-item">
            {book.title}
          </li>
-       )
-     })
+       );
+     });
   }
 
   render(){
@@ -25,11 +25,16 @@ class BookList extends Component {
 
 //takes the state of our app as arg and will return props inside of BookList
 //this is the link between react and redux
+//GLUING REACT TO REDUX HERE
  function mapStateToProps(state){
     return {
         books:state.books
     }
  }
+
+ //connect function takes in the mapStateToProps and the conponent and returns a container
+ //this is exporting a container instead of a component
+ export default connect(mapStateToProps)(BookList);
 
 //container is just a component that has access to redux state.
 // we want the most parent component to be a container so it can have access to data.
@@ -43,7 +48,6 @@ class BookList extends Component {
 // to connect these two together which is called reactredux. using this it will turn components into smart component which
 // means it has access to piece of state.
 // container is where redux and react connect to each other.
-
 
 //using {} when importing means instead of importing the whole object we are going to
 //import just a property of it.
