@@ -6,3 +6,7 @@ export default function(){
     {title:'python'}
   ]
 }
+
+
+
+///action is  a piece of data that flows between reducers
