@@ -9,7 +9,7 @@ class BookList extends Component {
      return this.props.books.map((book)=>{
        return (
          <li
-           onClick={()=>this.props.selectBook(book)}   //the selectBook is avaible now through props through mapDispatchToProps() 
+           onClick={()=> this.props.selectBook(book)}   //the selectBook is avaible now through props through mapDispatchToProps() 
            key={book.title}
            className="list-group-item"
            >
